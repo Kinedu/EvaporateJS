@@ -1038,7 +1038,7 @@
     if (this.con.cloudfront || this.awsUrl.indexOf('cloudfront') > -1) {
       path = '/' + this.fileUpload.name;
     }
-    return path;
+    return path.replace(/\/\//g, '/');
   };
 
   SignedS3AWSRequest.prototype.updateRequest = function (request) {
